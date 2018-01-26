@@ -12,7 +12,9 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'public/views'));
 app.set('view engine', 'pug');
-
+var app = express();
+app.use(bodyParser.json({limit: "50mb"}));
+app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
